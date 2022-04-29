@@ -1,0 +1,6 @@
+GET http://laragigs.test/naon/2
+
+###
+POST http://laragig.test/about/2
+
+###
