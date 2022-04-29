@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,10 @@ Route::get('about', function () {
 Route::get('/naon/{id}', function ($id) {
     return response('naonwehah' . $id);
 })->where('id', '[0-9]+');
+
+Route::get('/search', function (Request $request) {
+    return response($request->nama . ' ' . $request->city);
+});
 
 Route::post('post/{id}', function ($id) {
     return response(

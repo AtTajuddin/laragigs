@@ -1,4 +1,7 @@
-GET http://laragigs.test/naon/2
+GET http://laragigs.test/naon/3
+
+###
+GET https://laragigs.test/search?nama=Bram&city=bandung
 
 ###
 POST http://laragig.test/about/2
