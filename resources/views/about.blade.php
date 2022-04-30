@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+@foreach ($myman as $item)
+    @if (true)
+        <h1>kda</h1>
+    @endif
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+    ini my
 
-<body>
-  my body is my man
-</body>
+    <h1>bisa juga emmet</h1>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis magni quam minima laborum a, nemo quidem. Quam
+        placeat et quae excepturi quaerat corrupti exercitationem. Doloribus et eius harum quas facilis.</p>
 
-</html>
+    {{ $gagal }}
+@endforeach

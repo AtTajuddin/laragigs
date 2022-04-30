@@ -14,6 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/dariapi', function () {
+    return response()->json(
+        [
+            'Post' => [
+                'isi' => 'ini araay',
+                'tapi' => 'naha jdi objecy'
+            ]
+        ]
+    );
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

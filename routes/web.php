@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,34 +16,43 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home', [
+        'heading' => 'Laragigs ini pasing data from route',
+        'listings' => Listing::all()
+    ]);
 });
 
-Route::get('hai', function () {
-    return response('<h1> ini title</h1>', 200)
-        ->header('Content-Type', 'text plain')
-        ->header('my', 'man');
+Route::get('/search/{id}', function ($id) {
+    return view('listing', [
+        'listing' => Listing::find($id)
+    ]);
 });
 
-Route::get('about', function () {
-    return view('about');
-});
+// Route::get('hai', function () {
+//     return response('<h1> ini title</h1>', 200)
+//         ->header('Content-Type', 'text plain')
+//         ->header('my', 'man');
+// });
 
-Route::get('/naon/{id}', function ($id) {
-    return response('naonwehah' . $id);
-})->where('id', '[0-9]+');
+// Route::get('about', function () {
+//     return view('about');
+// });
 
-Route::get('/search', function (Request $request) {
-    return response($request->nama . ' ' . $request->city);
-});
+// Route::get('/naon/{id}', function ($id) {
+//     return response('naonwehah' . $id);
+// })->where('id', '[0-9]+');
 
-Route::post('post/{id}', function ($id) {
-    return response(
-        [
-            'mypost' => [
-                'akuh' => 'ini',
-                'siapa' => 'coba',
-            ]
-        ]
-    );
-});
+// Route::get('/search', function (Request $request) {
+//     return response($request->nama . ' ' . $request->city);
+// });
+
+// Route::post('post/{id}', function ($id) {
+//     return response(
+//         [
+//             'mypost' => [
+//                 'akuh' => 'ini',
+//                 'siapa' => 'coba',
+//             ]
+//         ]
+//     );
+// });

@@ -2,6 +2,8 @@ GET http://laragigs.test/naon/3
 
 ###
 GET https://laragigs.test/search?nama=Bram&city=bandung
+###
+GET https://laragigs.test/api/dariapi
 
 ###
 POST http://laragig.test/about/2
