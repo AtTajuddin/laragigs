@@ -16,20 +16,9 @@
                 <img class="mr-6 mb-6 w-48" src="{{ asset('images/no-image.png') }}" alt="" />
                 <h3 class="mb-2 text-2xl">{{ $listing->title }}</h3>
                 <div class="mb-4 text-xl font-bold">{{ $listing->commpany }}</div>
-                <ul class="flex">
-                    <li class="mr-2 rounded-xl bg-black px-3 py-1 text-white">
-                        <a href="#">Laravel</a>
-                    </li>
-                    <li class="mr-2 rounded-xl bg-black px-3 py-1 text-white">
-                        <a href="#">API</a>
-                    </li>
-                    <li class="mr-2 rounded-xl bg-black px-3 py-1 text-white">
-                        <a href="#">Backend</a>
-                    </li>
-                    <li class="mr-2 rounded-xl bg-black px-3 py-1 text-white">
-                        <a href="#">Vue</a>
-                    </li>
-                </ul>
+
+                <x-list-tags :csvTags="$listing->tags" />
+
                 <div class="my-4 text-lg">
                     <i class="fa-solid fa-location-dot"></i> {{ $listing->location }}
                 </div>
