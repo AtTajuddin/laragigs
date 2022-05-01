@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Listing extends Model
 {
     use HasFactory;
+    public function scopeFilter($query, array $filters)
+    {
+
+        // dd($xx = $query->where('tag', 'like', '%' . request('tag') . '%'));
+        if ($filters['tag'] ?? false) {
+            $query->where('tags', 'like', '%' . request('tag') . '%');
+        }
+    }
+    public function naon($query, $filters)
+    {
+        dd($query);
+    }
 }

@@ -11,8 +11,7 @@ class ListingController extends Controller
     public static function index()
     {
         return view('listing.index', [
-            'heading' => 'Laragigs ini pasing data from route',
-            'listings' => Listing::all()
+            'listings' => Listing::latest()->filter(request(['tag']))->get()
         ]);
     }
     //show single list
