@@ -10,7 +10,7 @@ class ListingController extends Controller
     //show All List
     public static function index()
     {
-        return view('home', [
+        return view('listing.index', [
             'heading' => 'Laragigs ini pasing data from route',
             'listings' => Listing::all()
         ]);
@@ -18,7 +18,7 @@ class ListingController extends Controller
     //show single list
     public static function show(Listing $listing)
     {
-        return view('listing', [
+        return view('listing.show', [
             'listing' => $listing
         ]);
     }
