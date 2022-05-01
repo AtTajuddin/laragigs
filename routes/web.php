@@ -22,12 +22,34 @@ Route::get('/', function () {
     ]);
 });
 
-Route::get('/search/{id}', function ($id) {
+// cara yg baik -- type bject class -- selain yg ada di listing hasil 404
+Route::get('/search/{listing}', function (Listing $listing) {
     return view('listing', [
-        'listing' => Listing::find($id)
+        'listing' => $listing
     ]);
 });
 
+//cara ke 2 perbaikan cara ke 1 -- menghendle error jika $id tidak ada
+// Route::get('/search/{id}', function ($id) {
+//     $listing = Listing::find($id);
+//     // dd($listing);
+//     if ($listing) {
+//         return view('listing', [
+//             'listing' => $listing
+//         ]);
+//     } else {
+//         abort('404');
+//     }
+// });
+
+//cara ke 1 -- muncul error jika diketik/isi url $id gak ada
+// Route::get('/search/{id}', function ($id) {
+//     return view('listing', [
+//         'listing' => Listing::find($id)
+//     ]);
+// });
+
+//=======================================================;
 // Route::get('hai', function () {
 //     return response('<h1> ini title</h1>', 200)
 //         ->header('Content-Type', 'text plain')
