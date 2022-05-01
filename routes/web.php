@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Listing;
+use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -15,66 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        'heading' => 'Laragigs ini pasing data from route',
-        'listings' => Listing::all()
-    ]);
-});
+// Common Resource Routes:
+// index - Show all listings
+// show - Show single listing
+// create - Show form to create new listing
+// store - Store new listing
+// edit - Show form to edit listing
+// update - Update listing
+// destroy - Delete listing
+
+Route::get('/', [ListingController::class, 'index']);
 
 // cara yg baik -- type bject class -- selain yg ada di listing hasil 404
-Route::get('/search/{listing}', function (Listing $listing) {
-    return view('listing', [
-        'listing' => $listing
-    ]);
-});
-
-//cara ke 2 perbaikan cara ke 1 -- menghendle error jika $id tidak ada
-// Route::get('/search/{id}', function ($id) {
-//     $listing = Listing::find($id);
-//     // dd($listing);
-//     if ($listing) {
-//         return view('listing', [
-//             'listing' => $listing
-//         ]);
-//     } else {
-//         abort('404');
-//     }
-// });
-
-//cara ke 1 -- muncul error jika diketik/isi url $id gak ada
-// Route::get('/search/{id}', function ($id) {
-//     return view('listing', [
-//         'listing' => Listing::find($id)
-//     ]);
-// });
-
-//=======================================================;
-// Route::get('hai', function () {
-//     return response('<h1> ini title</h1>', 200)
-//         ->header('Content-Type', 'text plain')
-//         ->header('my', 'man');
-// });
-
-// Route::get('about', function () {
-//     return view('about');
-// });
-
-// Route::get('/naon/{id}', function ($id) {
-//     return response('naonwehah' . $id);
-// })->where('id', '[0-9]+');
-
-// Route::get('/search', function (Request $request) {
-//     return response($request->nama . ' ' . $request->city);
-// });
-
-// Route::post('post/{id}', function ($id) {
-//     return response(
-//         [
-//             'mypost' => [
-//                 'akuh' => 'ini',
-//                 'siapa' => 'coba',
-//             ]
-//         ]
-//     );
-// });
+Route::get('/search/{listing}', [ListingController::class, 'show']);
