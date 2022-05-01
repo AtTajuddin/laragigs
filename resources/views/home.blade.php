@@ -1,6 +1,4 @@
-@extends('layout')
-
-@section('konten')
+<x-layout>
     @include('partial._hero')
     @include('partial._search')
     <div class="mx-4 gap-4 space-y-4 md:space-y-0 lg:grid lg:grid-cols-2">
@@ -16,4 +14,4 @@
             <h1>No Listings</h1>
         @endunless
     </div>
-@endsection
+</x-layout>

@@ -29,7 +29,7 @@
         </ul>
     </nav>
     <main>
-        @yield('konten')
+        {{ $slot }}
     </main>
     <footer
         class="bg-laravel fixed bottom-0 left-0 mt-24 flex h-24 w-full items-center justify-start font-bold text-white opacity-90 md:justify-center">

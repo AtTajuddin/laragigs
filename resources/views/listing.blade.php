@@ -1,5 +1,4 @@
-@extends('layout')
-@section('konten')
+<x-layout>
     @include('partial._search')
     {{-- <div class="mx-4 gap-4 space-y-4 md:space-y-0 lg:grid lg:grid-cols-2">
         <h3 class="text-2xl text-pink-500">SINGLE LISTING </h3>
@@ -44,4 +43,4 @@
             </div>
         </x-card>
     </div>
-@endsection
+</x-layout>
