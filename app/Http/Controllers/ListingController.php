@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use pagination;
 use App\Models\Listing;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
@@ -12,7 +13,11 @@ class ListingController extends Controller
     public static function index()
     {
         return view('listing.index', [
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
+            //all -- not use pagination
+            // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
+
+            //use pagination -- cek make -- {{ $listings->links() }}
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(2)
         ]);
     }
     //show single list

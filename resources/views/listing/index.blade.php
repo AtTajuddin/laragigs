@@ -14,4 +14,7 @@
             <h1>No Listings</h1>
         @endunless
     </div>
+    <div class="mt-6 p-10">
+        {{ $listings->links() }}
+    </div>
 </x-layout>
