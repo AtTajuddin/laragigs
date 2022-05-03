@@ -11,6 +11,7 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src="//unpkg.com/alpinejs" defer></script>
     <title>LaraGigs | Find Laravel Jobs & Projects</title>
 </head>
 
