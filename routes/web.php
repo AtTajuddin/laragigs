@@ -26,5 +26,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [ListingController::class, 'index']);
 
+Route::get('/listings/create', [ListingController::class, 'create']);
+
+Route::post('/listings', [ListingController::class, 'store']);
+
 // cara yg baik -- type bject class -- selain yg ada di listing hasil 404
-Route::get('/search/{listing}', [ListingController::class, 'show']);
+Route::get('/listings/{listing}', [ListingController::class, 'show']);
