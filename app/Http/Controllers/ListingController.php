@@ -47,7 +47,13 @@ class ListingController extends Controller
             'tags' => 'required',
             'description' => 'required'
         ]);
+
+        // dd($request->hasFile('logo'));
+        if ($request->hasFile('logo')) {
+            $formField['logo'] = $request->file('logo')->store('logos', 'public');
+        }
         Listing::create($formField);
+        // dd($formField);
 
         // Session::flash('message', 'Listing was created!')
 

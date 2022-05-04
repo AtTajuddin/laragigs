@@ -6,7 +6,9 @@
     <div class="mx-4">
         <x-card class='p-20'>
             <div class="flex flex-col items-center justify-center text-center">
-                <img class="mr-6 mb-6 w-48" src="{{ asset('images/no-image.png') }}" alt="" />
+                <img class="mr-6 mb-6 w-48"
+                    src="{{ $listing->logo ? asset('storage/' . $listing->logo) : asset('images/no-image.png') }}"
+                    alt="" />
                 <h3 class="mb-2 text-2xl">{{ $listing->title }}</h3>
                 <div class="mb-4 text-xl font-bold">{{ $listing->commpany }}</div>
 
