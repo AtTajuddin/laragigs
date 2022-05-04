@@ -39,6 +39,9 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 //Update listing
 Route::put('/listings/{listing}', [ListingController::class, 'update']);
 
+//Deete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
 //show single listing
 // cara yg baik -- type bject class -- selain yg ada di listing hasil 404
 Route::get('/listings/{listing}', [ListingController::class, 'show']);

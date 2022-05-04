@@ -42,7 +42,7 @@
             <div class="mt-10 flex space-x-6 p-6">
                 <a href="/listings/{{ $listing->id }}/edit"> <i class="fa-solid fa-pencil text-green-800"></i>
                     Edit</a>
-                <form action="/listing/{{ $listing->id }}" method="POST">
+                <form method="POST" action="/listings/{{ $listing->id }}">
                     @csrf
                     @method('DELETE')
                     <button class="text-red-500"> <i class="fa-solid fa-trash text-red-800"></i>
