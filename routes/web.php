@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\ListingController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ListingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +46,7 @@ Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
 //show single listing
 // cara yg baik -- type bject class -- selain yg ada di listing hasil 404
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
+
+// --------------------------------
+//User Registration
+Route::get('/register', [UserController::class, 'create']);
