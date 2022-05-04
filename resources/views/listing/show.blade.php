@@ -38,5 +38,11 @@
                 </div>
             </div>
         </x-card>
+        <x-card>
+            <div class="mt-10 flex content-start space-x-6 p-6">
+                <a href="/listings/{{ $listing->id }}/edit"> <i class="fa-solid fa-arrow-left text-green-800"></i>
+                    Edit</a>
+            </div>
+        </x-card>
     </div>
 </x-layout>

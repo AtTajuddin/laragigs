@@ -24,11 +24,21 @@ use Illuminate\Support\Facades\Route;
 // update - Update listing
 // destroy - Delete listing
 
+// show all listings
 Route::get('/', [ListingController::class, 'index']);
 
+// show form to create ne listing
 Route::get('/listings/create', [ListingController::class, 'create']);
 
+//store new listing
 Route::post('/listings', [ListingController::class, 'store']);
 
+// show edit listing
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+//Update listing
+Route::put('/listings/{listing}', [ListingController::class, 'update']);
+
+//show single listing
 // cara yg baik -- type bject class -- selain yg ada di listing hasil 404
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
