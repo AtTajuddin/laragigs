@@ -50,3 +50,6 @@ Route::get('/listings/{listing}', [ListingController::class, 'show']);
 // --------------------------------
 //User Registration
 Route::get('/register', [UserController::class, 'create']);
+
+//User store
+Route::post('/users', [UserController::class, 'store']);
