@@ -30,4 +30,15 @@ class UserController extends Controller
         auth()->login($user);
         return redirect('/')->with('message', 'user telah sukses dibuat dan jg login');
     }
+
+    //logout user
+    public function logout(Request $request)
+    {
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'Anda sudah Logout');
+    }
 }
