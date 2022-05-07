@@ -52,6 +52,10 @@ class ListingController extends Controller
         if ($request->hasFile('logo')) {
             $formField['logo'] = $request->file('logo')->store('logos', 'public');
         }
+
+        //set owner to listing
+        $formField['user_id'] = auth()->id();
+
         Listing::create($formField);
         // dd($formField);
 

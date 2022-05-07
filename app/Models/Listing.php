@@ -16,7 +16,8 @@ class Listing extends Model
         'email',
         'tags',
         'description',
-        'logo'
+        'logo',
+        'user_id'
     ];
 
     public function scopeFilter($query, array $filters)
