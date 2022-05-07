@@ -17,7 +17,7 @@ class ListingController extends Controller
             // 'listings' => Listing::latest()->filter(request(['tag', 'search']))->get()
 
             //use pagination -- cek make -- {{ $listings->links() }}
-            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(2)
+            'listings' => Listing::latest()->filter(request(['tag', 'search']))->paginate(6)
         ]);
     }
     //show single list

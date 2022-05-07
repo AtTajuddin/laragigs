@@ -33,8 +33,10 @@ class Listing extends Model
                 ->orWhere('company', 'like', '%' . request('search') . '%');
         }
     }
-    public function naon($query, $filters)
+
+    // Relationship to User
+    public function user()
     {
-        dd($query);
+        return $this->belongsTo(User::class, 'user_id');
     }
 }
