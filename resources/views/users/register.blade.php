@@ -15,7 +15,7 @@
                         Name
                     </label>
                     <input type="text" class="w-full rounded border border-gray-200 p-2" name="name"
-                        value={{ old('name') }} />
+                        value="{{ old('name') }}" />
                     @Error('name')
                         <p class="mt-1 text-xs text-red-700">{{ $message }}</p>
                     @enderror
@@ -24,7 +24,7 @@
                 <div class="mb-6">
                     <label for="email" class="mb-2 inline-block text-lg">Email</label>
                     <input type="email" class="w-full rounded border border-gray-200 p-2" name="email"
-                        value={{ old('email') }} />
+                        value="{{ old('email') }}" />
                     @Error('email')
                         <p class="mt-1 text-xs text-red-700">{{ $message }}</p>
                     @enderror
@@ -35,7 +35,7 @@
                         Password
                     </label>
                     <input type="password" class="w-full rounded border border-gray-200 p-2" name="password"
-                        value={{ old('password') }} />
+                        value="{{ old('password') }}" />
                     @Error('password')
                         <p class="mt-1 text-xs text-red-700">{{ $message }}</p>
                     @enderror
@@ -46,7 +46,7 @@
                         Confirm Password
                     </label>
                     <input type="password" class="w-full rounded border border-gray-200 p-2"
-                        name="password_confirmation" value={{ old('password_confirmation') }} />
+                        name="password_confirmation" value="{{ old('password_confirmation') }}" />
                     @Error('password_confirmation')
                         <p class="mt-1 text-xs text-red-700">{{ $message }}</p>
                     @enderror

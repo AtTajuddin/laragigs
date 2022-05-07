@@ -41,4 +41,26 @@ class UserController extends Controller
 
         return redirect('/')->with('message', 'Anda sudah Logout');
     }
+
+    //Login user
+    public function login()
+    {
+        return view('users.login');
+    }
+
+    //user authenticate
+    public function authenticate(Request $request)
+    {
+        $formField = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
+        if (auth()->attempt($formField)) {
+            $request->session()->regenerate();
+
+            return redirect('/')->with('message', 'You are Now logged in!');
+        }
+
+        return back()->withErrors(['email' => 'Invalid Credentials (Kesalahan Kredensial)'])->onlyInput();
+    }
 }
