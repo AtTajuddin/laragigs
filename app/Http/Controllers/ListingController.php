@@ -74,6 +74,11 @@ class ListingController extends Controller
     //update data listing
     public static function update(Request $request, Listing $listing)
     {
+        //make sure logged in user is owner
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unathorized Action (Anda Tidak berhak mengakses aksi ini!)');
+        }
+
         $formField = $request->validate([
             'title' => 'required',
             'company' => 'required',
@@ -94,6 +99,11 @@ class ListingController extends Controller
     //delete lisitng
     public function destroy(Listing $listing)
     {
+        //make sure logged in user is owner
+        if ($listing->user_id != auth()->id()) {
+            abort(403, 'Unathorized Action (Anda Tidak berhak mengakses aksi ini!)');
+        }
+
         // dd($listing);
         $listing->delete();
         return redirect('/')->with('message', 'List was deleted successfully');
