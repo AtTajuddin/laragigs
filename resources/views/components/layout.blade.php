@@ -22,12 +22,12 @@
         <ul class="mr-6 flex space-x-6 text-lg">
             @auth
                 <li>
-                    <span class="font-bold uppercase">
-                        Welcome {{ auth()->user()->name }}
-                    </span>
+                    <span class="font-bold uppercase"> Welcome -</span>
+                    <span
+                        class="text-capitalize font-bold text-cyan-400 shadow-amber-400">{{ auth()->user()->name }}</span>
                 </li>
                 <li>
-                    <a href="/listing/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
+                    <a href="/listings/manage" class="hover:text-laravel"><i class="fa-solid fa-gear"></i>
                         Manage listing</a>
                 </li>
                 <li>
